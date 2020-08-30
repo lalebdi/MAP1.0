@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Testing testing</h1>
+      <h1 className="alert alert-warning">Testing testing</h1>
     </div>
   );
 }
