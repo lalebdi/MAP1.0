@@ -42,6 +42,12 @@ public class ProjectTaskController {
     public Iterable<ProjectTask> getAllPtS(){
         return projectTaskService.findAll();
     }
+
+    @GetMapping("/{pt_id}")
+    public ResponseEntity<?> getPTById (@PathVariable Long pt_id){
+        ProjectTask projectTask = projectTaskService.findById(pt_id);
+        return new ResponseEntity<ProjectTask>(projectTask, HttpStatus.OK);
+    }
 }
 
 //the routing is here
