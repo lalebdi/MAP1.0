@@ -1,12 +1,16 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar';
+import ProjectBoard from './components/ProjectBoard';
+
 
 
 function App() {
   return (
     <div className="App">
-      <h1 className="alert alert-warning">Testing testing</h1>
+      <Navbar />
+      <ProjectBoard />
     </div>
   );
 }
