@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class AddProjectTask extends Component {
     render() {
@@ -7,9 +8,9 @@ class AddProjectTask extends Component {
         <div className="container">
             <div className="row">
                 <div className="col-md-8 m-auto">
-                    <a href="/ProjectBoard.html" className="btn btn-light">
+                    <Link to="/" className="btn btn-light">
                         Back to Board
-                    </a>
+                    </Link>
                     <h4 className="display-4 text-center">Add /Update Project Task</h4>
                     <form>
                         <div className="form-group">
