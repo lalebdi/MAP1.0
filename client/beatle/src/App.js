@@ -5,11 +5,14 @@ import Navbar from './components/Navbar';
 import ProjectBoard from './components/ProjectBoard';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AddProjectTask from './components/ProjectTask/AddProjectTask';
+import { Provider } from 'react-redux';
+import store from './store';
 
 
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
     <div>
       <Navbar />
@@ -17,6 +20,7 @@ function App() {
       <Route exact path="/addprojecttask" component={AddProjectTask} />
     </div>
     </Router>
+    </Provider>
   );
 }
 
