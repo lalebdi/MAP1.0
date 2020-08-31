@@ -7,12 +7,12 @@ export const addProjectTask = (project_task, history) => async dispatch => {
     try{
         await axios.post("http://localhost:8080/api/board", project_task);
     history.push("/")
-    // dispatch({ //this is to clear out the error object when everything goes well
-    //     type: GET_ERRORS,
-    //     payload: {
+    dispatch({ //this is to clear out the error object when everything goes well
+        type: GET_ERRORS,
+        payload: {
 
-    //     }
-    // })
+        }
+    })
     }catch (error) {
         dispatch({ 
             type: GET_ERRORS,
