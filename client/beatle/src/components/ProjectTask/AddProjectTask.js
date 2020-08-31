@@ -16,6 +16,16 @@ class AddProjectTask extends Component {
         // console.log(e);
     };
 
+    onSubmit = (e) => {
+        e.preventDefault()
+        const newProjectTask ={
+            summary :this.state.summary,
+            acceptanceCriteria: this.state.acceptanceCriteria,
+            status: this.state.status
+        }
+        // console.log(newProjectTask);
+    }
+
     render() {
         return (
             <div className="addProjectTask">
@@ -26,7 +36,7 @@ class AddProjectTask extends Component {
                         Back to Board
                     </Link>
                     <h4 className="display-4 text-center">Add /Update Project Task</h4>
-                    <form>
+                    <form onSubmit={this.onSubmit}>
                         <div className="form-group">
                             <input type="text" className="form-control form-control-lg" name="summary" value={this.state.summary} placeholder="Project Task summary" onChange={this.onchange} />
                         </div>
