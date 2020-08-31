@@ -11,8 +11,15 @@ class AddProjectTask extends Component {
         this.state ={
             summary :"",
             acceptanceCriteria: "",
-            status: ""
+            status: "",
+            errors: {}
         };
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.errors){
+            this.setState({ errors: nextProps.errors })
+        }
     }
 
     onchange = (e) => {
@@ -32,6 +39,9 @@ class AddProjectTask extends Component {
     }
 
     render() {
+
+        const { errors } = this.state;
+
         return (
             <div className="addProjectTask">
         <div className="container">
@@ -43,7 +53,10 @@ class AddProjectTask extends Component {
                     <h4 className="display-4 text-center">Add /Update Project Task</h4>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
-                            <input type="text" className="form-control form-control-lg" name="summary" value={this.state.summary} placeholder="Project Task summary" onChange={this.onchange} />
+                            <input type="text" className={ classnames("form-control form-control-lg", {
+                                "is-invalid" : errors.summary
+                            })} name="summary" value={this.state.summary} placeholder="Project Task summary" onChange={this.onchange} />
+                        {/*<p> { errors.summary } </p> */}
                         </div>
                         <div className="form-group">
                             <textarea className="form-control form-control-lg" placeholder="Acceptance Criteria" value={this.state.acceptanceCriteria} name="acceptanceCriteria" onChange={this.onchange}></textarea>
