@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class AddProjectTask extends Component {
+    constructor(){
+        super()
+        this.state ={
+            summary :"",
+            acceptanceCriteria: "",
+            status: ""
+        };
+    }
+
+    onchange = (e) => {
+        this.setState({[e.target.name] : e.target.value})
+        // console.log(e);
+    };
+
     render() {
         return (
             <div className="addProjectTask">
@@ -14,13 +28,13 @@ class AddProjectTask extends Component {
                     <h4 className="display-4 text-center">Add /Update Project Task</h4>
                     <form>
                         <div className="form-group">
-                            <input type="text" className="form-control form-control-lg" name="summary" placeholder="Project Task summary" />
+                            <input type="text" className="form-control form-control-lg" name="summary" value={this.state.summary} placeholder="Project Task summary" onChange={this.onchange} />
                         </div>
                         <div className="form-group">
-                            <textarea className="form-control form-control-lg" placeholder="Acceptance Criteria" name="acceptanceCriteria"></textarea>
+                            <textarea className="form-control form-control-lg" placeholder="Acceptance Criteria" value={this.state.acceptanceCriteria} name="acceptanceCriteria" onChange={this.onchange}></textarea>
                         </div>
                         <div className="form-group">
-                            <select className="form-control form-control-lg" name="status">
+                            <select className="form-control form-control-lg" name="status" value={this.state.status} onChange={this.onchange}>
                                 <option value="">Select Status</option>
                                 <option value="TO_DO">TO DO</option>
                                 <option value="IN_PROGRESS">IN PROGRESS</option>
