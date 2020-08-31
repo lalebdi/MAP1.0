@@ -28,6 +28,7 @@ class AddProjectTask extends Component {
             status: this.state.status
         }
         // console.log(newProjectTask);
+        this.props.addProjectTask(newProjectTask, this.props.history);
     }
 
     render() {
@@ -65,4 +66,15 @@ class AddProjectTask extends Component {
     }
 }
 
-export default AddProjectTask;
+// below is the declaration of what the component needs to work
+addProjectTask.PropTypes ={
+    addProjectTask: PropTypes.func.isRequired,
+    errors: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+    errors: state.errors
+})
+
+export default connect(mapStateToProps, {addProjectTask}) (AddProjectTask);
+// connect is a high order component that connects the component to the store.
