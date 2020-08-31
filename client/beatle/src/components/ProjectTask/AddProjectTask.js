@@ -16,6 +16,7 @@ class AddProjectTask extends Component {
         };
     }
 
+        // the life cycle method below has been deprecated and will research a better alternative 
     componentWillReceiveProps(nextProps){
         if(nextProps.errors){
             this.setState({ errors: nextProps.errors })
