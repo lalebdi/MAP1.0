@@ -58,8 +58,8 @@ export const getProjectTask = (pt_id, history) => async dispatch => {
         
     })
     }catch (error) {
-        dispatch{ 
-            history.push('/');
-        }
+        dispatch(
+            history.push('/')
+        )
     }
 } // next wire up the reducer
