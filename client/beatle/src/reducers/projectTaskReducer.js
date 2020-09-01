@@ -16,7 +16,7 @@ export default function(state = initialState, action){
             case DELETE_PROJECT_TASK:
                 return{
                     ...state,
-                    project_tasks: state.project_tasks.filter(   //this will update the state when we call the API
+                    project_tasks: state.project_tasks.filter(   //this will update the state when we call the API. so when we delete something it is just one API call
                         project_task => project_task.id !== action.payload
                         )
                 };
