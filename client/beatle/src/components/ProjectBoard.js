@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ProjectTaskItem from './ProjectTask/ProjectTaskItem';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getBacklog } from '../actions/projectTaskActions'
+import { getBacklog } from '../actions/projectTaskActions';
 
 class ProjectBoard extends Component {
 
@@ -12,6 +12,32 @@ class ProjectBoard extends Component {
     }
 
     render() {
+
+        const { project_tasks } = this.props.project_tasks;
+
+        let BoardContent;
+        let todoItems = [];
+        let inProgessItems = [];
+        let doneItems = [];
+
+        const BoardLogic = project_tasks =>{
+            if(project_tasks.length < 1){
+                return (
+                    <div className="alert alert-info text-center" role="alert"> No Projects Tasks</div>
+                )
+            }else{
+                const tasks = project_tasks.map(project_task => (
+                    <ProjectTaskItem key={project_task.id} project_task={project_task} />
+                ));
+
+                for(let i= 0; i < tasks.length; i++){
+                    console.log(tasks[i])
+                }
+            }
+        }
+
+        BoardLogic(project_tasks);
+
         return (
             <div className="container">
             <Link to="/addprojecttask"  className="btn btn-primary mb-3">
@@ -28,10 +54,7 @@ class ProjectBoard extends Component {
                                 <h3>TO DO</h3>
                             </div>
                         </div>
-    
-                        
-                        <ProjectTaskItem />
-                        
+
                     </div>
                     <div className="col-md-4">
                         <div className="card text-center mb-2">
@@ -39,7 +62,7 @@ class ProjectBoard extends Component {
                                 <h3>In Progress</h3>
                             </div>
                         </div>
-                        <ProjectTaskItem />
+
                     </div>
                     <div className="col-md-4">
                         <div className="card text-center mb-2">
@@ -64,7 +87,7 @@ ProjectBoard.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    project_tasks: state.project_tasks //this is from the root reducer
+    project_tasks: state.project_task //this is from the root reducer
 })
 
 export default connect(mapStateToProps, { getBacklog }) (ProjectBoard);
