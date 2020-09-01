@@ -30,8 +30,19 @@ class ProjectBoard extends Component {
                     <ProjectTaskItem key={project_task.id} project_task={project_task} />
                 ));
 
-                for(let i= 0; i < tasks.length; i++){
-                    console.log(tasks[i])
+                for(let i = 0; i < tasks.length; i++){
+                    // console.log(tasks[i])
+                    // console.log(tasks[i].props.project_task.status)
+                    if(tasks[i].props.project_task.status ==="TO_DO"){
+                            todoItems.push(tasks[i])
+                    }
+                    if(tasks[i].props.project_task.status ==="IN_PROGRESS"){
+                            inProgessItems.push(tasks[i])
+
+                    }
+                    if(tasks[i].props.project_task.status ==="DONE"){
+                            doneItems.push(tasks[i])
+                    }
                 }
             }
         }
@@ -54,7 +65,7 @@ class ProjectBoard extends Component {
                                 <h3>TO DO</h3>
                             </div>
                         </div>
-
+                        {todoItems}
                     </div>
                     <div className="col-md-4">
                         <div className="card text-center mb-2">
@@ -62,7 +73,7 @@ class ProjectBoard extends Component {
                                 <h3>In Progress</h3>
                             </div>
                         </div>
-
+                            {inProgessItems}
                     </div>
                     <div className="col-md-4">
                         <div className="card text-center mb-2">
@@ -70,7 +81,7 @@ class ProjectBoard extends Component {
                                 <h3>Done</h3>
                             </div>
                         </div>
-                        
+                        {doneItems}
                     </div>
                 </div>
             </div>
