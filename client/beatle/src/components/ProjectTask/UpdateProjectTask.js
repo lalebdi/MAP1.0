@@ -17,6 +17,22 @@ class UpdateProjectTask extends Component {
         }
     }
 
+    componentWillReceiveProps(nextProps){
+        const {
+            id,
+            summary,
+            acceptanceCriteria,
+            status
+        } = nextProps.project_task;
+
+        this.setState({
+            id,
+            summary,
+            acceptanceCriteria,
+            status
+        })
+    }
+
     componentDidMount(){
         const { pt_id } = this.props.match.params; // when a component is via a route it will have a match param passed with it. 
         this.props.getProjectTask(pt_id);
@@ -70,7 +86,7 @@ UpdateProjectTask.propType = {
 }
 
 const mapStateToProps = state =>( {
-    project_task : state.project_task,
+    project_task : state.project_task.project_task,
     errors: state.errors
 })
 
