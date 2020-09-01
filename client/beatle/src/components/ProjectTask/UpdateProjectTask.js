@@ -8,7 +8,7 @@ import { getProjectTask } from '../../actions/projectTaskActions';
 class UpdateProjectTask extends Component {
 
     componentDidMount(){
-        const { pt_id } = this.props.match.params;
+        const { pt_id } = this.props.match.params; // when a component is via a route it will have a match param passed with it. 
         this.props.getProjectTask(pt_id);
     }
     render() {
