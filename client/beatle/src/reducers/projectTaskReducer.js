@@ -16,7 +16,9 @@ export default function(state = initialState, action){
             case DELETE_PROJECT_TASK:
                 return{
                     ...state,
-
+                    project_tasks: state.project_tasks.filter(   //this will update the state when we call the API
+                        project_task => project_task.id !== action.payload
+                        )
                 };
 
         default:
