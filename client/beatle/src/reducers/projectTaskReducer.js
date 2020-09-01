@@ -11,13 +11,13 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 project_tasks: action.payload
-            }
+            };
         
             case DELETE_PROJECT_TASK:
                 return{
                     ...state,
-                    
-                }
+
+                };
 
         default:
             return state;
