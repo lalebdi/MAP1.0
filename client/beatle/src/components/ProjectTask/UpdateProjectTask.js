@@ -6,11 +6,28 @@ import classnames from 'classnames';
 import { getProjectTask } from '../../actions/projectTaskActions';
 
 class UpdateProjectTask extends Component {
+    constructor(){
+        super()
+        this.state = {
+            id: "",
+            summary: "",
+            acceptanceCriteria: "",
+            status: "",
+            errors: {}
+        }
+    }
 
     componentDidMount(){
         const { pt_id } = this.props.match.params; // when a component is via a route it will have a match param passed with it. 
         this.props.getProjectTask(pt_id);
     }
+
+    onChange = (e) => {
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+    }
+
     render() {
         return (
             <div className="addProjectTask">
@@ -23,13 +40,13 @@ class UpdateProjectTask extends Component {
                     <h4 className="display-4 text-center">Add /Update Project Task</h4>
                     <form>
                         <div className="form-group">
-                            <input type="text" className="form-control form-control-lg" name="summary" placeholder="Project Task summary" />
+                            <input type="text" className="form-control form-control-lg" name="summary" placeholder="Project Task summary" value={this.state.summary} onChange={this.onChange}/>
                         </div>
                         <div className="form-group">
-                            <textarea className="form-control form-control-lg" placeholder="Acceptance Criteria" name="acceptanceCriteria"></textarea>
+                            <textarea className="form-control form-control-lg" placeholder="Acceptance Criteria" name="acceptanceCriteria" value={this.state.acceptanceCriteria} onChange={this.onChange}></textarea>
                         </div>
                         <div className="form-group">
-                            <select className="form-control form-control-lg" name="status">
+                            <select className="form-control form-control-lg" name="status" value={this.state.status} onChange={this.onChange}>
                                 <option value="">Select Status</option>
                                 <option value="TO_DO">TO DO</option>
                                 <option value="IN_PROGRESS">IN PROGRESS</option>
