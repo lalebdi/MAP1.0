@@ -2,6 +2,7 @@ import axios from 'axios';
 import { GET_ERRORS } from './types';
 import { GET_PROJECT_TASKS } from './types'
 import { DELETE_PROJECT_TASK } from './types'
+import { GET_PROJECT_TASK } from './types'
 
  //history is a prop that is passed by the react router
 
@@ -61,4 +62,4 @@ export const getProjectTask = (pt_id, history) => async dispatch => {
             history.push('/');
         }
     }
-}
+} // next wire up the reducer
