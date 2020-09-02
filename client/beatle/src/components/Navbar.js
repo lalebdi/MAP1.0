@@ -5,7 +5,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
         <div className="container">
             <a className="navbar-brand" href="/">
-                Project Task Tool
+                Make Awesome Projects 1.0
             </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
                 <span className="navbar-toggler-icon" />
