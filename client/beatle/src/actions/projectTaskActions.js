@@ -4,13 +4,13 @@ import { GET_PROJECT_TASKS } from './types'
 import { DELETE_PROJECT_TASK } from './types'
 import { GET_PROJECT_TASK } from './types'
 
- //history is a prop that is passed by the react router
+// history is a prop that is passed by the react router
 
 export const addProjectTask = (project_task, history) => async dispatch => {
     try{
         await axios.post("https://calm-spire-91306.herokuapp.com/api/board", project_task);
     history.push("/")
-    dispatch({ //this is to clear out the error object when everything goes well
+    dispatch({ // this is to clear out the error object when everything goes well
         type: GET_ERRORS,
         payload: {
 
