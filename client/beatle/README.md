@@ -88,9 +88,9 @@ npm install
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+This project has been deployed
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_Please refer to the [Live Site ](https://keen-khorana-d28887.netlify.app/)_
 
 
 
