@@ -77,3 +77,13 @@ git clone https://github.com/lalebdi/MAP1.0
 npm install
 ```
 
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+This project has been deployed
+
+_Please refer to the [Live Site ](https://keen-khorana-d28887.netlify.app/)_
+
+
