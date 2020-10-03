@@ -40,3 +40,40 @@ This is the first version of MAP (Make Awesome Projects). You can create a cards
 * You can edit or delete any card or change its status
 * Check out the [next version ](https://github.com/lalebdi/MAP) it needs a backend :smile:
 
+
+### Built With
+
+* React
+* Redux
+* Redux Thunk
+* Axios
+* Bootstrap
+* Classnames
+* Font Awesome
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+### Installation
+
+
+1. Clone the repo
+```sh
+git clone https://github.com/lalebdi/MAP1.0
+```
+2. Install NPM packages
+```sh
+npm install
+```
+
